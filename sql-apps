@@ -1,0 +1,81 @@
+create table PIYAMAS_STU.INTERN_DATA_GROUP_SERVICE_MB_SS as
+ select ID, CLASS, GENDER, AGE, HH_PROVINCE_ENG, TMH_RC,PROCERASERVICE, APP_DATA_MB, APP_SESSION
+,case when lower(PROCERASERVICE) like 'facebook' then APP_DATA_MB  else 0 end as facebook_DATA_MB
+,case when lower(PROCERASERVICE) like 'facebook voip' then APP_DATA_MB  else 0 end as facebook_voip_DATA_MB
+,case when lower(PROCERASERVICE) like 'facebook messenger' then APP_DATA_MB  else 0 end as facebook_messenger_DATA_MB
+,case when lower(PROCERASERVICE) like 'instagam' then APP_DATA_MB  else 0 end as instagam_DATA_MB
+,case when lower(PROCERASERVICE) like 'twitter' then APP_DATA_MB  else 0 end as twitter_DATA_MB
+,case when PROCERASERVICE = 'VK' then APP_DATA_MB  else 0 end as VK_DATA_MB
+,case when lower(PROCERASERVICE) like 'youtube'  then APP_DATA_MB  else 0 end as Youtube_DATA_MB
+,case when lower(PROCERASERVICE) like 'youtube web'  then APP_DATA_MB  else 0 end as Youtube_web_DATA_MB
+,case when lower(PROCERASERVICE) like 'youtube video'  then APP_DATA_MB  else 0 end as Youtube_video_DATA_MB
+,case when PROCERASERVICE like 'LINE' then APP_DATA_MB  else 0 end as line_DATA_MB
+,case when PROCERASERVICE = 'Google' then APP_DATA_MB  else 0 end as google_DATA_MB
+,case when PROCERASERVICE = 'Outlook.com' then APP_DATA_MB  else 0 end as Outlook_com_DATA_MB
+,case when PROCERASERVICE = 'Gmail' then APP_DATA_MB  else 0 end as Gmail_DATA_MB
+,case when PROCERASERVICE like 'Yahoo mail' then APP_DATA_MB  else 0 end as Yahoo_mail_DATA_MB
+,case when PROCERASERVICE = 'Tik Tok' then APP_DATA_MB  else 0 end as Tik_Tok_DATA_MB
+,case when PROCERASERVICE = 'QQ' then APP_DATA_MB  else 0 end as QQ_DATA_MB
+,case when PROCERASERVICE = 'Grab' then APP_DATA_MB  else 0 end as Grab_DATA_MB
+,case when PROCERASERVICE = 'Naver V' then APP_DATA_MB  else 0 end as Naver_V_DATA_MB
+,case when PROCERASERVICE = 'BIGO LIVE' then APP_DATA_MB  else 0 end as BIGO_LIVE_DATA_MB
+,case when PROCERASERVICE = 'Skype' then APP_DATA_MB  else 0 end as Skype_DATA_MB
+,case when PROCERASERVICE = 'Tinder' then APP_DATA_MB  else 0 end as Tinder_DATA_MB
+,case when PROCERASERVICE = 'SNOWIM' then APP_DATA_MB  else 0 end as SNOW_IM_DATA_MB
+,case when PROCERASERVICE like '%PlayerUnknown%' then APP_DATA_MB  else 0 end as PUBG_DATA_MB
+,case when PROCERASERVICE like '%Garena%' then APP_DATA_MB  else 0 end as Garena_DATA_MB
+,case when PROCERASERVICE like '%King Games%' then APP_DATA_MB  else 0 end as King_Games_DATA_MB
+,case when PROCERASERVICE like '%NetEase Games%' then APP_DATA_MB  else 0 end as NetEase_Games_DATA_MB
+,case when PROCERASERVICE like '%Unity engine%' then APP_DATA_MB  else 0 end as Unity_engine_DATA_MB
+,case when PROCERASERVICE like '%Strike of Kings%' then APP_DATA_MB  else 0 end as Strike_of_Kings_DATA_MB
+,case when PROCERASERVICE = 'Alibaba.com' then APP_DATA_MB  else 0 end as Alibaba_DATA_MB
+,case when PROCERASERVICE = 'Taobao' then APP_DATA_MB  else 0 end as Taobao_DATA_MB
+,case when PROCERASERVICE = 'Lazada' then APP_DATA_MB  else 0 end as Lazada_DATA_MB
+,case when PROCERASERVICE = 'Amazon' then APP_DATA_MB  else 0 end as Amazon_DATA_MB
+,case when PROCERASERVICE = 'Joox Music' then APP_DATA_MB else 0 end as Joox_DATA_MB
+,case when PROCERASERVICE = 'Spotify' then APP_DATA_MB  else 0 end as Spotify_DATA_MB
+,case when PROCERASERVICE like '%netflix%' then APP_DATA_MB  else 0 end as netflix_DATA_MB
+,case when PROCERASERVICE = 'LINE TV' then APP_DATA_MB  else 0 end as LINE_TV_DATA_MB
+,case when PROCERASERVICE like '%TrueID%' then APP_DATA_MB  else 0 end as TrueID_Streaming_Live_DATA_MB
+,case when PROCERASERVICE = 'HTTP media stream' then APP_DATA_MB  else 0 end as HTTP_media_stream_DATA_MB
+
+,case when lower(PROCERASERVICE) like 'facebook' then APP_SESSION else 0 end as facebook_session
+,case when lower(PROCERASERVICE) like 'facebook voip' then APP_SESSION  else 0 end as facebook_voip_APP_SESSION
+,case when lower(PROCERASERVICE) like 'facebook messenger' then APP_SESSION  else 0 end as facebook_messenger_session
+,case when lower(PROCERASERVICE) like 'instragram' then APP_SESSION  else 0 end as instragram_session
+,case when lower(PROCERASERVICE) like 'twitter' then APP_SESSION  else 0 end as twitter_session
+,case when PROCERASERVICE = 'VK' then APP_SESSION  else 0 end as VK_session
+,case when lower(PROCERASERVICE) like 'youtube'  then APP_SESSION  else 0 end as Youtube_session
+,case when lower(PROCERASERVICE) like 'youtube web'  then APP_SESSION  else 0 end as Youtube_web_session
+,case when lower(PROCERASERVICE) like 'youtube video'  then APP_SESSION  else 0 end as Youtube_video_session
+,case when PROCERASERVICE like 'LINE' then APP_SESSION  else 0 end as line_session
+,case when PROCERASERVICE = 'Google' then APP_SESSION  else 0 end as google_session
+,case when PROCERASERVICE = 'Outlook.com' then APP_SESSION  else 0 end as Outlook_com_session
+,case when PROCERASERVICE = 'Gmail' then APP_SESSION  else 0 end as Gmail_session
+,case when PROCERASERVICE like 'Yahoo mail' then APP_SESSION  else 0 end as Yahoo_mail_session
+,case when PROCERASERVICE = 'Tik Tok' then APP_SESSION  else 0 end as Tik_Tok_session
+,case when PROCERASERVICE = 'QQ' then APP_SESSION  else 0 end as QQ_session
+,case when PROCERASERVICE = 'Grab' then APP_SESSION  else 0 end as Grab_session
+,case when PROCERASERVICE = 'Naver V' then APP_SESSION  else 0 end as Naver_V_session
+,case when PROCERASERVICE = 'BIGO LIVE' then APP_SESSION  else 0 end as BIGO_LIVE_session
+,case when PROCERASERVICE = 'Skype' then APP_SESSION  else 0 end as Skype_session
+,case when PROCERASERVICE = 'Tinder' then APP_SESSION  else 0 end as Tinder_session
+,case when PROCERASERVICE = 'SNOWIM' then APP_SESSION  else 0 end as SNOW_IM_session
+,case when PROCERASERVICE like '%PlayerUnknown%' then APP_SESSION  else 0 end as PUBG_session
+,case when PROCERASERVICE like '%Garena%' then APP_SESSION  else 0 end as Garena_session
+,case when PROCERASERVICE like '%King Games%' then APP_SESSION  else 0 end as King_Games_session
+,case when PROCERASERVICE like '%NetEase Games%' then APP_SESSION  else 0 end as NetEase_Games_session
+,case when PROCERASERVICE like '%Unity engine%' then APP_SESSION  else 0 end as Unity_engine_session
+,case when PROCERASERVICE like '%Strike of Kings%' then APP_SESSION  else 0 end as Strike_of_Kings_session
+,case when PROCERASERVICE = 'Alibaba.com' then APP_SESSION  else 0 end as Alibaba_session
+,case when PROCERASERVICE = 'Taobao' then APP_SESSION  else 0 end as Taobao_session
+,case when PROCERASERVICE = 'Lazada' then APP_SESSION  else 0 end as Lazada_session
+,case when PROCERASERVICE = 'Amazon' then APP_SESSION  else 0 end as Amazon_session
+,case when PROCERASERVICE = 'Joox Music' then APP_SESSION else 0 end as Joox_session
+,case when PROCERASERVICE = 'Spotify' then APP_SESSION  else 0 end as Spotify_session
+,case when PROCERASERVICE like '%netflix%' then APP_SESSION  else 0 end as netflix_session
+,case when PROCERASERVICE = 'LINE TV' then APP_SESSION  else 0 end as LINE_TV_session
+,case when PROCERASERVICE like '%TrueID%' then APP_SESSION  else 0 end as TrueID_Streaming_Live_session
+,case when PROCERASERVICE = 'HTTP media stream' then APP_SESSION  else 0 end as HTTP_media_stream_session
+from DAR_PRD.PIYAMAS_STU.INTERN_DATA_AGE_18_80
+where PROCERASERVICE is not null  
